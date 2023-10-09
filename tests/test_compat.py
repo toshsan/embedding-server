@@ -1,8 +1,5 @@
-import unittest
-
-
-class OpenAI_compat(unittest.TestCase):
-    def test_compat(self):
+class TestCompat:
+    def test_openaicompat(self):
         import openai
 
         openai.api_key = "YOUR_KEY"
@@ -11,10 +8,6 @@ class OpenAI_compat(unittest.TestCase):
         response = openai.Embedding.create(
             input="The food was delicious and the waiter...", model="all-MiniLM-L6-v2"
         )
-        embeddings = response['data'][0]['embedding']
-        
-        self.assertIsNotNone(embeddings)
+        embeddings = response["data"][0]["embedding"]
 
-
-if __name__ == "__main__":
-    unittest.main()
+        assert embeddings

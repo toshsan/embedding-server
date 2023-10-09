@@ -40,7 +40,7 @@ curl http://localhost:8000/v1/embeddings \
 ### Start Server
 
 ```
-$ KEY=MYKEY ./server.py
+$ KEY=MYKEY ./embedding_server/server.py
 ```
 
 Or using Uvicorn
