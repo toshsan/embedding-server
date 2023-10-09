@@ -10,8 +10,8 @@ embeddings = openai.Embedding.create(
 
 print(embeddings)
 
-# make faiss available
-index = faiss.IndexFlatL2(d)  # build the index, d=size of vectors
-# here we assume xb contains a n-by-d numpy matrix of type float32
-index.add(xb)  # add vectors to the index
-print(index.ntotal)
+# # make faiss available
+# index = faiss.IndexFlatL2(d)  # build the index, d=size of vectors
+# # here we assume xb contains a n-by-d numpy matrix of type float32
+# index.add(xb)  # add vectors to the index
+# print(index.ntotal)
