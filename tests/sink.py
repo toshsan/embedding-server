@@ -1,5 +1,5 @@
 import openai
-import faiss
+# import faiss
 
 openai.api_key = "YOUR_KEY"
 openai.api_base = "http://localhost:8080/v1"
