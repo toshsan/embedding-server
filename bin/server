@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
 
 import uvicorn
-from embedding_server import server
+from embedding_server.server import app
 
 if __name__ == "__main__":
-    uvicorn.run(
-        server.app,
-        host="0.0.0.0",
-        port=8080,
-    )
+    uvicorn.run(app,host="0.0.0.0",port=8000)

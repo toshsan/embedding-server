@@ -1,0 +1,8 @@
+[Unit]
+Description=Embedding Server
+After=multi-user.target[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 -m embedding_server
+WantedBy=multi-user.target
+DynamicUser=yes 

@@ -21,4 +21,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-server = "embedding_server.server:main"
+server = "embedding_server:main"
+
+[project.scripts]
+embedding-server = "embedding_server:main"
