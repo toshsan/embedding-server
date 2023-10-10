@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "embedding-server"
-version = "0.2.0"
+version = "0.2.1"
 description = ""
 authors = ["ToshSan <santosh@sahoo.xyz>"]
 readme = "README.md"
@@ -21,7 +21,5 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-server = "embedding_server:main"
+embedding_server = "embedding_server.__main__:main"
 
-[project.scripts]
-embedding-server = "embedding_server:main"

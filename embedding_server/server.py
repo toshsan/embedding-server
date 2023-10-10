@@ -6,10 +6,10 @@ from fastapi import FastAPI, HTTPException, Header
 from pydantic import BaseModel, Field
 import os
 
-model_name = os.getenv("MODEL", "all-MiniLM-L6-v2")
-auth_key = f"Bearer {os.getenv('KEY', 'YOUR_KEY')}"
+MODEL_NAME = os.getenv("MODEL", "all-MiniLM-L6-v2")
+AUTH = f"Bearer {os.getenv('KEY', 'YOUR_KEY')}"
 
-model = SentenceTransformer(model_name)
+model = SentenceTransformer(MODEL_NAME)
 app = FastAPI()
 logger = logging.getLogger(__name__)
 
@@ -25,7 +25,7 @@ class EmbeddingBody(BaseModel):
     "/v1/embeddings",
 )
 async def root(body: EmbeddingBody, Authorization: Optional[str] = Header(None)):
-    if auth_key != Authorization:
+    if AUTH != Authorization:
         raise HTTPException(
             status_code=401,
             detail="Authroization: Bearer YOUR_KEY must be provided",
@@ -45,7 +45,7 @@ async def root(body: EmbeddingBody, Authorization: Optional[str] = Header(None))
                 "object": "embedding",
             }
         ],
-        "model": model_name,
+        "model": MODEL_NAME,
         "object": "list",
         "usage": {"prompt_tokens": 0, "total_tokens": 0},
     }
