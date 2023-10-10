@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import logging
 import time
 from typing import Optional
@@ -51,13 +49,3 @@ async def root(body: EmbeddingBody, Authorization: Optional[str] = Header(None))
         "object": "list",
         "usage": {"prompt_tokens": 0, "total_tokens": 0},
     }
-
-
-if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run(
-        app,
-        host="0.0.0.0",
-        port=8080,
-    )

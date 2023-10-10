@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 DESCRIPTION = "Embedding Server"
 LONG_DESCRIPTION = "Drop in replacement for OpenAI's embedding API. Can be used with official OpenAPI libraries"
 
@@ -23,9 +23,6 @@ setup(
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",
     ],
-    entry_points={
-        "console_scripts": [
-            "embedding-server = embedding_server.server:main",
-        ],
-    },
+    package_data={'embedding-server': ['bin/server']},
+    scripts=['embedding_server/bin/server']
 )
