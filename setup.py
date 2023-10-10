@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.0.2"
+VERSION = "0.2.0"
 DESCRIPTION = "Embedding Server"
 LONG_DESCRIPTION = "Drop in replacement for OpenAI's embedding API. Can be used with official OpenAPI libraries"
 
